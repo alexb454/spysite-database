@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Secert Spy Stuff, I Mean FISH</title>
+    <link rel="stylesheet" href="spy.css">
+</head>
+<body>
+    <h1>Not Spy info here, this is a local survey about fish</h1>
+    <div id="Send_data">
+        <label id="Message">Input Message/Data Here:</label>
+        <input type="text" id="Data" class="Data" name="Data">
+        <label id="Agent_num">Agent Number:</label>
+        <input type="text" id="Agent" class="Agent" name="Agent">
+        <label id="Structure_num">Structure Number:</label>
+        <input type="text" id="Structure" class="Structure" name="Structure">
+        <button type="submit" id="Sub_btn" name="Sub_btn" onclick="Send()">Send Info</button>
+    </div> 
+    <h2>View info on fish here "wink, wink"</h2>
+    <div id="Recieve_data">
+        <label id="Your_agent">Your Agent Number:</label>
+        <input type="text" id="New_Agent" class="New_Agent" name="New_Agent">
+        <label id="Your_structure">The Structure Number:</label>
+        <input type="text" id="New_Structure" class="New_Structure" name="New_Structure">
+        <button type="submit" id="Another_btn" class="Another_btn" name="Another_btn" onclick="Recieve(); Unhidden();">Recieve info on "fish"</button>
+        <div id="hidden_table" class="hidden_table" name="hidden_table">
+            <p id="table" name="table">Click <a id="hidden_link">HERE</a> to get info you requested</p>
+        </div>
+    </div>
+    <div id="image_div">
+        <img id="Fish" src="fishsuit.jpeg" alt="Spy, i mean a fish">
+    </div>
+    <script>
+        function Send(){
+            // create spyData Class and Input check
+            var mes = document.querySelector(".Data").value;
+            if(mes === ''){
+                alert('Message cannot be empty')
+            }
+            var agtNum = document.querySelector(".Agent").value;
+            if(agtNum === ''){
+                alert('Agent Number cannot be empty')
+            }
+            var strNum = document.querySelector(".Structure").value;
+            if(strNum === ''){
+                alert('Structure Number cannot be empty')
+            }
+
+            fetch('/info', {
+                method: "POST",
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+                body:JSON.stringify({
+                    Data : mes,
+                    Agent : agtNum,
+                    Structure: strNum
+                })
+            });
+
+        }
+        
+        async function Recieve(){
+            // pulls inputs from recieve request and checks inputs
+            let mes = document.querySelector(".Data").value;
+            
+            var agtNum = document.getElementById("New_Agent").value;
+            if(agtNum === ''){
+                alert('Agent Number cannot be empty')
+            }
+            var strNum = document.getElementById("New_Structure").value;
+            if(strNum === ''){
+                alert('Structure Number cannot be empty')
+            }
+
+            let spy_url = new URL(window.location.origin + '/spy')
+            let query_parameters = {
+                Agent : agtNum,
+                Structure: strNum
+            };
+            spy_url.search = new URLSearchParams(query_parameters).toString();
+            document.getElementById('hidden_link').href = spy_url.toString();
+
+        }
+        function Unhidden() {
+            let Tabled = document.querySelector('.hidden_table');
+            let submitTable = document.querySelector('.Another_btn');
+            Tabled.classList.remove('hidden_table');
+            Tabled.classList.add('unhidden_table');
+        }
+    </script>
+</body>
+</html>

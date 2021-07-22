@@ -1,0 +1,16 @@
+{
+  "name": "s3_sprint_1",
+  "version": "1.0.0",
+  "description": "Sprint 1 for Team 6",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Alex Bristow",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "path": "^0.12.7",
+    "pg": "^8.6.0"
+  }
+}
