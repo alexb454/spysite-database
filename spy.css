@@ -1,0 +1,119 @@
+body{
+    background-color: crimson;
+}
+
+h1{
+    color: yellow;
+    position: relative;
+    left:180px;
+}
+
+h2{
+    color: yellow;
+    position: relative;
+    left:330px;
+    top:250px;
+}
+
+#Message{
+    position: relative;
+    left:280px;
+}
+
+#Data{
+    color: orange;
+    background-color: cyan;
+    position: relative;
+    left:280px;
+}
+
+#Agent_num{
+    position: relative;
+    top:40px;
+}
+
+#Agent{
+    color: orchid;
+    background-color: teal;
+    position: relative;
+    left:33px;
+    top:40px;
+}
+
+#Structure_num{
+    position: relative;
+    right:265px;
+    top:80px;
+}
+
+#Structure{
+    color: royalblue;
+    background-color: deeppink;
+    position: relative;
+    right:235px;
+    top:80px;
+}
+
+#Sub_btn{
+    color: springgreen;
+    background-color: violet;
+    position: relative;
+    right:355px;
+    top:120px;
+}
+
+#Fish{
+    position: relative;
+    left:900px;
+    top:-150px;
+}
+
+#Your_agent{
+    position: relative;
+    left:310px;
+    top:250px;
+}
+
+#New_Agent{
+    color: coral;
+    background-color: cornflowerblue;
+    position: relative;
+    left:320px;
+    top:250px;
+}
+#Your_structure{
+    position: relative;
+    left:15px;
+    top:290px;
+}
+
+#New_Structure{
+    color: darkcyan;
+    background-color: darkgoldenrod;
+    position: relative;
+    left:23px;
+    top:290px;
+}
+
+#Another_btn{
+    color: springgreen;
+    background-color: violet;
+    position: relative;
+    right:123px;
+    top:330px;
+}
+.hidden_table{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.unhidden_table{
+    visibility: visible;
+    opacity: 1;
+}
+
+#table{
+    position: relative;
+    left:423px;
+    top:350px;
+}
